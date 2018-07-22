@@ -17,8 +17,9 @@ script:
   - cd ../..
   - ls gtest/googletest/include/
   - ls gtest/build/googlemock/gtest/
-  - g++ -pthread -Igtest/googletest/include/ -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
-  - ./FizzBuzzTest.o
+  - g++ -Igtest/googletest/include/ -c FizzBuzzTest.cpp -o FizzBuzzTest.o
+  - g++ -pthread FizzBuzzTest.o  -Lgtest/build/googlemock/gtest/ -lgtest
+  - ./a.o
 
 notifications:
   email: false
