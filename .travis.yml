@@ -16,8 +16,9 @@ script:
   - make
   - make install
   - cd ../..
-  - $PWD
-  - g++ -Igtest/googletest/include -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
+  - ls gtest/googletest/include/
+  - ls gtest/build/googlemock/gtest/
+  - g++ -Igtest/googletest/include/ -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
   - ./FizzBuzzTest.o
 
 notifications:
