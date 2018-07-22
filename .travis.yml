@@ -15,11 +15,9 @@ script:
   - cmake ..
   - make
   - cd ../..
-  - ls gtest/googletest/include/
-  - ls gtest/build/googlemock/gtest/
-  - g++ -Igtest/googletest/include/ -c FizzBuzzTest.cpp -o FizzBuzzTest.o
-  - g++ -pthread FizzBuzzTest.o  -Lgtest/build/googlemock/gtest/ -lgtest
-  - ./a.o
+  - g++ -Igtest/googletest/include/ -c FizzBuzzTest.cpp -o FizzBuzzTest.out
+  - g++ -pthread FizzBuzzTest.out  -Lgtest/build/googlemock/gtest/ -lgtest
+  - ./a.out
 
 notifications:
   email: false
