@@ -14,11 +14,10 @@ script:
   - cd build
   - cmake ..
   - make
-  - make install
   - cd ../..
   - ls gtest/googletest/include/
   - ls gtest/build/googlemock/gtest/
-  - g++ -Igtest/googletest/include/ -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
+  - g++ -pthread -Igtest/googletest/include/ -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
   - ./FizzBuzzTest.o
 
 notifications:
