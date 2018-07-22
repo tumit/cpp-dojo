@@ -16,7 +16,7 @@ script:
   - make
   - cd ../..
   - $PWD
-  - g++ -Igtest/googletest/include -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
+  - g++ -I./gtest/googletest/include -L./gtest/build/googlemock/gtest/ -lgtest ./FizzBuzzTest.cpp -o ./FizzBuzzTest.o
   - ./FizzBuzzTest.o
 
 notifications:
