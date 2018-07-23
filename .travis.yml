@@ -15,8 +15,8 @@ script:
   - cmake ..
   - make
   - cd ../..
-  - g++ -Igtest/googletest/include/ -c FizzBuzzTest.cpp -o FizzBuzzTest.out
-  - g++ -pthread FizzBuzzTest.out  -Lgtest/build/googlemock/gtest/ -lgtest -o unit_tests.out
+  - g++ -Igtest/googletest/include/ -c main.cpp -o main.out
+  - g++ -pthread main.out  -Lgtest/build/googlemock/gtest/ -lgtest -o unit_tests.out
   - ./unit_tests.out
 
 notifications:
