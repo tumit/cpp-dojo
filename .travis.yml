@@ -15,6 +15,7 @@ script:
   - cmake ..
   - make
   - cd ../..
+  - mkdir testing
   - g++ -Igtest/googletest/include/ -c *.cpp
   - g++ -pthread *.o -Lgtest/build/googlemock/gtest/ -lgtest -o testing/unit_tests.o
   - ./testing/unit_tests.o
