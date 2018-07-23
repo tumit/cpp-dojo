@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clear o files",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "*.o"
+            ]
+        },
+        {
+            "label": "compile main",
+            "dependsOn": [
+                "clear o files"
+            ],
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-Igtest/googletest/include/",
+                "-c",
+                "*.cpp"
+            ]
+        },
+        {
+            "label": "build unit_tests",
+            "dependsOn": [
+                "compile main"
+            ],
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-pthread",
+                "*.o",
+                "-Lgtest/build/googlemock/gtest/",
+                "-lgtest",
+                "-o",
+                "testing/unit_tests.o"
+            ]
+        },
+        {
+            "label": "run unit_tests",
+            "dependsOn": [
+                "build unit_tests"
+            ],
+            "type": "shell",
+            "command": "./testing/unit_tests.o"
+        }
+    ]
+}
