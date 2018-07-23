@@ -1,21 +1,9 @@
 
 #include <gtest/gtest.h>
+#include "calculator.h"
 
-namespace fizzbuzz {
-  std::string Say(const int n) {
-    if (n % 5 == 0) {
-      return "Buzz";
-    }
-    return "Fizz";
-  }
-}
-
-TEST(main, Fizz) {
-  EXPECT_EQ("Fizz", fizzbuzz::Say(3));
-}
-
-TEST(main, Buzz) {
-  EXPECT_EQ("Buzz", fizzbuzz::Say(5));
+TEST(calculator, add_1_and_9_then_should_be_10) {
+  EXPECT_EQ(10, calculator::add(1, 9)) << "add 1 and 9 should be 10";
 }
 
 int main(int argc, char **argv) {
