@@ -16,8 +16,8 @@ script:
   - make
   - cd ../..
   - g++ -Igtest/googletest/include/ -c *.cpp
-  - g++ -pthread *.o -Lgtest/build/googlemock/gtest/ -lgtest -o unit_tests.out
-  - ./unit_tests.out
+  - g++ -pthread *.o -Lgtest/build/googlemock/gtest/ -lgtest -o testing/unit_tests.o
+  - ./testing/unit_tests.o
 
 notifications:
   email: false

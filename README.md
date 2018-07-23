@@ -20,9 +20,9 @@ Simple C++ project include
         - make
     - compile and run unit test
         - cd ../.. 
-        - g++ -Igtest/googletest/include/ -c main.cpp
-        - g++ -pthread main.o -Lgtest/build/googlemock/gtest/ -lgtest -o unit_tests.o
-        - ./unit_tests.o
+        - g++ -Igtest/googletest/include/ -c *.cpp
+        - g++ -pthread *.o -Lgtest/build/googlemock/gtest/ -lgtest -o testing/unit_tests.o
+        - ./testing/unit_tests.o
     
     
 
