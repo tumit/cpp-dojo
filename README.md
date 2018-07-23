@@ -9,7 +9,5 @@
     - cmake ..
     - make
 ## compile ,test and run 
-    - cd ../..
-    - g++ -Igtest/googletest/include -Lgtest/build/googlemock/gtest/ -lgtest FizzBuzzTest.cpp -o FizzBuzzTest.o
-    - ./FizzBuzzTest
+    - see all steps in .travis.yml
 
